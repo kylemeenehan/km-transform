@@ -1,6 +1,6 @@
 # km-transform
 
-km-transform is a polyfill that extends JavaScript objects with a transform function that takes an anonymous function and returns a modified object.
+km-transform is a monkey patch that extends JavaScript objects with a transform function that takes an anonymous function and returns a modified object.
 
 The code is pretty straightforward:
 
