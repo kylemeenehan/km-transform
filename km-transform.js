@@ -1,20 +1,28 @@
-Object.prototype.transform = function(callback) {
+(function(){
 
-  var T;
-
-  if (this == null) {
-    throw new TypeError('this is null or not defined');
+  if ( Object.prototype.transform ) {
+    throw new TypeError('Object.transform already exists');
   }
 
-  var O = Object.assign({}, this);
+  Object.prototype.transform = function(callback) {
 
-  if (typeof callback!== 'function') {
-    throw new TypeError(callback + ' is not a function');
+    var T;
+
+    if (this == null) {
+      throw new TypeError('this is null or not defined');
+    }
+
+    var O = Object.assign({}, this);
+
+    if (typeof callback!== 'function') {
+      throw new TypeError(callback + ' is not a function');
+    }
+
+    if (arguments.length > 1) {
+      T = arguments[1];
+    }
+
+    return callback.call(T, O);
   }
 
-  if (arguments.length > 1) {
-    T = arguments[1];
-  }
-
-  return callback.call(T, O);
-}
+})();

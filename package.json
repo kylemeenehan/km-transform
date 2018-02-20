@@ -1,0 +1,26 @@
+{
+  "name": "km-transform",
+  "version": "1.0.0",
+  "description": "A monkey patch that extends javascript objects with a tranform method.",
+  "main": "km-transform.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylemeenehan/km-transform.git"
+  },
+  "keywords": [
+    "functional",
+    "functional",
+    "programming",
+    "functional",
+    "javascript"
+  ],
+  "author": "Kyle Meenehan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kylemeenehan/km-transform/issues"
+  },
+  "homepage": "https://github.com/kylemeenehan/km-transform#readme"
+}
