@@ -23,13 +23,12 @@ The code is pretty straightforward:
   16     T = arguments[1];
   17   }
   18
-  19   transformedObject = callback.call(T, O);
+  19   return callback.call(T, O);
   20
-  21   return transformedObject;
-  22 }
+  21 }
 ```
 
-After running the polyfill, you can use it as follows:
+After running the monkey patch, you can use it as follows:
 
 ```
 var myObject = {
