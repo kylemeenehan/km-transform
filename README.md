@@ -7,7 +7,7 @@ The code is pretty straightforward:
 ```
    1 Object.prototype.transform = function(callback) {
    2
-   3   var T, A;
+   3   var T;
    4
    5   if (this == null) {
    6     throw new TypeError('this is null or not defined');
