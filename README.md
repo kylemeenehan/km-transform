@@ -64,7 +64,7 @@ From here, we can create a new modified person in an imperative manner without t
 
 // imperative - without transform
 
-copyOfPerson = Object.assign({}, originalPerson);
+var copyOfPerson = Object.assign({}, originalPerson);
 age(copyOfPerson);
 shrink(copyOfPerson);
 fatten(copyOfPerson);
@@ -77,7 +77,7 @@ Or we can create a new aged person in one line of code in a functional manner wi
 
 // functional
 
-functionalCopyOfPerson = originalPerson.transform(age).transform(shrink).transform(fatten);
+var functionalCopyOfPerson = originalPerson.transform(age).transform(shrink).transform(fatten);
 
 ```
 
