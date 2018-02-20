@@ -1,6 +1,6 @@
 Object.prototype.transform = function(callback) {
 
-  var T, A;
+  var T;
 
   if (this == null) {
     throw new TypeError('this is null or not defined');
