@@ -13,7 +13,7 @@ The code is pretty straightforward:
    6     throw new TypeError('this is null or not defined');
    7   }
    8
-   9   var O = Object(this);
+   9   var O = Object.assign({}, this);
   10
   11   if (typeof callback!== 'function') {
   12     throw new TypeError(callback + ' is not a function');
@@ -67,3 +67,5 @@ Or we can create a new aged person in one line of code in a functional manner wi
 functionalCopyOfPerson = person.transform(age);
 
 ```
+
+km-transform depends on Object.assign, which isn't supported in some browsers. If you need to support those brosers, be sure to use a polyfill.
