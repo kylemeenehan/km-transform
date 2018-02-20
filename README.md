@@ -28,10 +28,11 @@ The code is pretty straightforward:
   21 }
 ```
 
-To see how this works, let's first declare a person object and a function that ages the person:
+To see how this works, let's first declare a person object and some functions that will modify a person:
 
 ```
-var person = {
+
+var originalPerson = {
   name: 'Mary',
   age: 31,
   height: 173,
@@ -45,27 +46,41 @@ function age(person) {
   return person;
 }
 
+function shrink(person) {
+  person.height -= 2;
+  return person;
+}
+
+function fatten(person) {
+  person.weight += 5;
+  return person;
+}
+
 ```
 
-From here, we can create a new aged person in an imperative manner without the transform:
+From here, we can create a new modified person in an imperative manner without the transform:
 
 ```
 
 // imperative - without transform
 
-copyOfPerson = Object.assign({}, person);
+copyOfPerson = Object.assign({}, originalPerson);
 age(copyOfPerson);
+shrink(copyOfPerson);
+fatten(copyOfPerson);
 
 ```
 
-Or we can create a new aged person in one line of code in a functional manner with the transform""
+Or we can create a new aged person in one line of code in a functional manner with the transform:
 
 ```
 
 // functional
 
-functionalCopyOfPerson = person.transform(age);
+functionalCopyOfPerson = originalPerson.transform(age).transform(shrink).transform(fatten);
 
 ```
+
+It's important to note here that the transform supports the functional programming paradigm in that it doesn't modify the original object.
 
 km-transform depends on Object.assign, which isn't supported in some browsers. If you need to support those brosers, be sure to use a polyfill.
