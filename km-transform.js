@@ -16,7 +16,5 @@ Object.prototype.transform = function(callback) {
     T = arguments[1];
   }
 
-  transformedObject = callback.call(T, O);
-
-  return transformedObject;
+  return callback.call(T, O);
 }
