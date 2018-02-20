@@ -28,15 +28,42 @@ The code is pretty straightforward:
   21 }
 ```
 
-After running the monkey patch, you can use it as follows:
+To see how this works, let's first declare a person object and a function that ages the person:
 
 ```
-var myObject = {
-  name: 'mary'
+var person = {
+  name: 'Mary',
+  age: 31,
+  height: 173,
+  weight: 70,
 };
 
-var output = myObject.transform(x => x.name);
-console.log(output); // 'mary'
-console.log(myObject); // { name: 'mary' }
-output = myObject.transform(x => x.name).transform(x => x.toUpperCase);
-console.log(output); // 'MARY'
+function age(person) {
+  person.age += 10;
+  person.height -= 2;
+  person.weight += 5;
+  return person;
+}
+
+```
+
+From here, we can create a new aged person in an imperative manner without the transform:
+
+```
+
+// imperative - without transform
+
+copyOfPerson = Object.assign({}, person);
+age(copyOfPerson);
+
+```
+
+Or we can create a new aged person in one line of code in a functional manner with the transform""
+
+```
+
+// functional
+
+functionalCopyOfPerson = person.transform(age);
+
+```

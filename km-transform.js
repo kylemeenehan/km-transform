@@ -6,7 +6,7 @@ Object.prototype.transform = function(callback) {
     throw new TypeError('this is null or not defined');
   }
 
-  var O = Object(this);
+  var O = Object.assign({}, this);
 
   if (typeof callback!== 'function') {
     throw new TypeError(callback + ' is not a function');
