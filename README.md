@@ -2,33 +2,29 @@
 
 km-transform is a monkey patch that extends JavaScript objects with a transform function that receives a callback and returns a modified object.
 
-The code is pretty straightforward:
+Start off by installing the package:
 
 ```
-   1 Object.prototype.transform = function(callback) {
-   2
-   3   var T;
-   4
-   5   if (this == null) {
-   6     throw new TypeError('this is null or not defined');
-   7   }
-   8
-   9   var O = Object.assign({}, this);
-  10
-  11   if (typeof callback!== 'function') {
-  12     throw new TypeError(callback + ' is not a function');
-  13   }
-  14
-  15   if (arguments.length > 1) {
-  16     T = arguments[1];
-  17   }
-  18
-  19   return callback.call(T, O);
-  20
-  21 }
+
+npm install km-transform
+
 ```
 
-To see how this works, let's first declare a person object and some functions that will modify a person:
+Then either import or require it:
+
+```
+
+import 'km-transform';
+
+// or
+
+require('km-transform');
+
+```
+
+Then you're ready to go!
+
+To see how it works, let's first declare a person object and some functions that will modify a person:
 
 ```
 
